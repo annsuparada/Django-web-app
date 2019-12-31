@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-        <title>Django Bloge - {{ title }}</title>
-    {% else %}
-        <title>Django Blog</title>
-    {% endif %}
-</head>
-<body>
+<!-- delete anything that in the baes template and extennd form base template -->
+{% extends "blog/base.html" %}
+<!-- warp it in content block -->
+{% block content %}
     <!-- loop over the key in home function -->
     {% for post in posts %}
         <h1>{{ post.title }}</h1>
         <p>By {{ post.author }} on {{ post.date_post }}</p>
         <p>{{ post.content }}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
