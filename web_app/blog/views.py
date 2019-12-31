@@ -20,7 +20,7 @@ def home(request):
     #pass dummy data to function by dict
     #then pass to third arg in render()
     context = {
-        # 'key': data
+        # 'key': value is the data
         'posts': posts
     }
                         #sub dir of templates/HTML file
