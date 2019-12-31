@@ -18,5 +18,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
+    # path('blog/', include('blog.urls')), #folder-name.file-name
+    # any path after blog/ dont have to add it here.
+    # example blog/about/ etc.
+    path('', include('blog.urls')),
+    #chang blog/ to localhost route
 ]
