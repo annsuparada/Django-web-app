@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
 posts = [
     {
@@ -21,7 +22,7 @@ def home(request):
     #then pass to third arg in render()
     context = {
         # 'key': value is the data
-        'posts': posts
+        'posts': Post.objects.all()
     }
                         #sub dir of templates/HTML file
     return render(request, 'blog/home.html', context) 
