@@ -8,8 +8,8 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username') #if form valid will be in dict
-            messages.success(request, f'Account created for {username}!') # reder success messages
-            return redirect('blog-home') #blog-home is the path name
+            messages.success(request, f'Your account has been created! You are now able to login') # reder success messages
+            return redirect('login') #blog-home is the path name
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {"form": form})
