@@ -121,8 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #where we upload file
+MEDIA_URL = '/media/' #where we can access img
 
 CRISPY_TEMPLATE_PACK ='bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
-LOGIN_URL = 'login'
+LOGIN_URL = 'login' #after login, redirect to profile page
