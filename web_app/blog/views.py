@@ -33,9 +33,9 @@ class UserPostListView(ListView):
     context_object_name = 'posts'
     paginate_by = 5
 
-    def get_query_set(self):
+    def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).oeder_by('-date_post')
+        return Post.objects.filter(author=user).order_by('-date_post')
 
 class PostDetailView(DetailView):
     model = Post
